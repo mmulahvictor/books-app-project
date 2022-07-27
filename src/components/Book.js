@@ -12,9 +12,9 @@ function Book () {
                     <h2>Search for a book</h2>
                     <div className="find">
                         <input type="text" placeholder='Enter the Book name' />
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button><i className="fa-solid fa-magnifying-glass"></i></button>
                     </div>
-                    <img src="" alt="" />
+                    <img src="../images/download (1).jpeg" alt="" />
                 </div>
             </div>
             <div>
