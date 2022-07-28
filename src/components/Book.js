@@ -3,14 +3,15 @@ import axios from 'axios';
 
 const Book = () => {
     const [ searchItem, setSearchItem ] = useState( "" );
+    const [books, setBooks]=useState({items: []})
     const onInputChange = ( e ) => {
         setSearchItem( e.target.value );
     };
 
     const url = `https://www.googleapis.com/books/v1/volumes`;
     const fetchBooks = async () => {
-        const result = await axios.get( `${ API_URL }?q=${ searchTerm }` );
-        console.log( result.data );
+        const result = await axios.get( `${ url }?q=${ searchItem }` );
+        setBooks( result.data );
     }
 
     function onSubmitHandle ( e ) {
