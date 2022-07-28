@@ -38,4 +38,8 @@ input{
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
 }
