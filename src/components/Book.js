@@ -13,6 +13,11 @@ const Book = () => {
         console.log( result.data );
     }
 
+    function onSubmitHandle ( e ) {
+        e.preventDefault()
+        fetchBooks()
+    }
+
     return (
         <section>
             <form onSubmit={ onSubmitHandle }>
