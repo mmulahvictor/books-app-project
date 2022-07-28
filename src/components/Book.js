@@ -19,6 +19,20 @@ const Book = () => {
         fetchBooks()
     }
 
+    const bookAuthors = authors => {
+        if ( authors.length <= 2 )
+        {
+            authors = authors.join( " and " );
+        } else if ( authors.length > 2 )
+        {
+            let lastAuthor = " and " + authors.slice( -1 );
+            authors.pop();
+            authors = authors.join( ", " );
+            authors += lastAuthor;
+        }
+        return authors;
+    };
+
     return (
         <section>
             <form onSubmit={ onSubmitHandle }>
@@ -37,6 +51,7 @@ const Book = () => {
                                     <img src="{`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}" alt="{`${book.volumeInfo.title} book`}" />
                                     <div>
                                         <h3>{ book.volumeInfo.title }</h3>
+                                        <p>{ bookAuthors( book.volumeInfo.authors ) }</p>
                                         <p>{ book.volumeInfo.publishedDate }</p>
                                     </div>
                                 </div><hr />
