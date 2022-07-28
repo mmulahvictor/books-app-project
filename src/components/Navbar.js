@@ -5,9 +5,9 @@ import './Style.css'
 function Navbar () {
   return (
     <nav className='nav'>
-      <Link to="/">Home</Link>
-      <Link to="/About">About</Link>
-      <Link to="/Contact">Contact</Link>
+      <Link to="/" className='link'>Home</Link>
+      <Link to="/About" className='link'>About</Link>
+      <Link to="/Contact" className='link'>Contact</Link>
     </nav>
   );
 }
