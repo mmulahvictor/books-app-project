@@ -28,6 +28,23 @@ const Book = () => {
                     <button type="submit">Search</button>
                 </label>
             </form>
+            <ul>
+                {
+                    books.items.map( ( book, index ) => {
+                        return (
+                            <li key={index}>
+                                <div>
+                                    <img src="{`http://books.google.com/books/content?id=${book.id}&printsec=frontcover&img=1&zoom=1&source=gbs_api`}" alt="{`${book.volumeInfo.title} book`}" />
+                                    <div>
+                                        <h3>{ book.volumeInfo.title }</h3>
+                                        <p>{ book.volumeInfo.publishedDate }</p>
+                                    </div>
+                                </div><hr />
+                            </li>
+                        )
+                    })
+                }
+            </ul>
         </section>
     );
 };
