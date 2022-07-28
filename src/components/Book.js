@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Style.css'
 
 const Book = () => {
     const [ searchItem, setSearchItem ] = useState( "" );
@@ -38,14 +39,14 @@ const Book = () => {
         <section>
             <form onSubmit={ onSubmitHandler }>
                 <label>
-                    <span>Search for books</span>
+                    <span className='lable'>Search for books:</span><br />
                     <input
                         type="search"
                         placeholder="Search for your book"
                         value={ searchItem }
                         onChange={ onInputChange }
                     />
-                    <button type="submit">Search</button>
+                    <button type="submit" className='btn'>Search</button>
                 </label>
             </form>
             <ul>
