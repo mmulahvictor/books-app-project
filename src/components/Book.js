@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Book = () => {
+    const [ searchItem, setSearchItem ] = useState( "" );
+    const onInputChange = ( e ) => {
+        setSearchItem( e.target.value );
+    };
     return (
         <section>
-            <form>
+            <form onSubmit={ onSubmitHandle }>
                 <label>
                     <span>Search for books</span>
-                    <input type="search" placeholder="Search for your book.,"/>
+                    <input type="search" placeholder="Search for your book" value={ searchItem } onChange={onInputChange} />
                     <button type="submit">Search</button>
                 </label>
             </form>
