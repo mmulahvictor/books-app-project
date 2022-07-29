@@ -23,7 +23,9 @@ const Contact = () => {
         alert( result.status );
     };
     return (
+        
         <form onSubmit={ handleSubmit }>
+            <h2>Talk to us! We will be glad to here your views!</h2>
             <div>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" required />
