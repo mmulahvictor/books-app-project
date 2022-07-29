@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Style.css'
+import Rating from './Rating';
+import './Style.css';
 
 const Book = () => {
     const [ searchItem, setSearchItem ] = useState( "" );
@@ -40,10 +41,10 @@ const Book = () => {
             <div>
                 <h2>Welcome to the book library!</h2>
                 <img src="https://sbooks.net/wp-content/uploads/2021/10/old-book-flying-letters-magic-light-background-bookshelf-library-ancient-books-as-symbol-knowledge-history-218640948.jpg" alt="" className='image' />
-                
+
             </div>
-            
-            
+
+
             <form onSubmit={ onSubmitHandler }>
                 <label>
                     <span className='lable'>Search for books:</span><br />
@@ -70,12 +71,14 @@ const Book = () => {
                                     <h3>{ book.volumeInfo.title }</h3>
                                     <p>{ bookAuthors( book.volumeInfo.authors ) }</p>
                                     <p>{ book.volumeInfo.publishedDate }</p>
+                                    <Rating />
                                 </div>
                             </div>
                             <hr />
                         </li>
                     );
-                } ) }
+                }
+                ) }
             </ul>
         </section>
     );

@@ -62,3 +62,13 @@ input {
     line-height: 3.5;
     font-size: 20px;
 }
+
+/* rating star */
+input[type="radio"] {
+    display: none;
+}
+
+.star{
+    cursor: pointer;
+    transition: color 200ms;
+}
