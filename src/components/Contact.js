@@ -1,46 +1,33 @@
-import React, { useState } from "react";
+import emailjs, { sendForm } from "emailjs-com";
 
 const Contact = () => {
-    const [ status, setStatus ] = useState( "Submit" );
-    const handleSubmit = async ( e ) => {
+    function sendEmail ( e ) {
         e.preventDefault();
-        setStatus( "Sending..." );
-        const { name, email, message } = e.target.elements;
-        let details = {
-            name: name.value,
-            email: email.value,
-            message: message.value,
-        };
-        let response = await fetch( "https://contactus-api.herokuapp.com/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify( details ),
-        } );
-        setStatus( "Submit" );
-        let result = await response.json();
-        alert( result.status );
-    };
+
+        emailjs.sendForm( 'service_hd6806v', 'template_b9y3pdx', e.target, 'Zl368Brpq3TROfItg' ).then( res => {
+            console.log( res );
+        } ).catch( err => console.log( err ) );
+    }
+
     return (
-        
-        <form onSubmit={ handleSubmit }>
+
+        <form onSubmit={ sendEmail }>
             <h2>Talk to us! We will be glad to here your views!</h2>
             <div>
                 <label htmlFor="name">Name:</label>
-                <input type="text" id="name" required />
+                <input name="name" type="text" id="name" required />
             </div>
             <div>
                 <label htmlFor="email">Email:</label>
-                <input type="email" id="email" required />
+                <input name="user-email" type="email" id="email" required />
             </div>
             <div>
                 <label htmlFor="message">Message:</label>
-                <textarea id="message" required />
+                <textarea name="message" id="message" required />
             </div>
-            <button type="submit">{ status }</button>
+            <input type="submit" value='send' className="form-control" />
         </form>
     );
 };
 
-export default Contact
+export default Contact;

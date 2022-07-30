@@ -2,6 +2,7 @@
     text-align: center;
 }
 
+/* book component */
 .btn {
     background-image: linear-gradient(to right, #2b5876 0%, #4e4376 51%, #2b5876 100%);
     margin: 6px;
@@ -17,7 +18,6 @@
 
 .btn:hover {
     background-position: right center;
-    /* change the direction of the change here */
     color: #fff;
     text-decoration: none;
 }
@@ -42,6 +42,7 @@ input {
     margin-bottom: 16px;
 }
 
+/* navbar */
 .nav {
     background-color: #2b5876;
     padding: 10px;
@@ -58,12 +59,14 @@ input {
     text-decoration: none;
     font-size: large;
 }
+
+/* about page */
 .about{
     line-height: 3.5;
     font-size: 20px;
 }
 
-/* rating star */
+/* rating star component */
 input[type="radio"] {
     display: none;
 }
@@ -71,4 +74,11 @@ input[type="radio"] {
 .star{
     cursor: pointer;
     transition: color 200ms;
+}
+
+/* contact */
+.form-control{
+    width: 40%;
+    margin-bottom: 10px;
+    background-color: blue;
 }
