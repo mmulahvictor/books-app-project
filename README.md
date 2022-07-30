@@ -17,9 +17,7 @@
   - [Authors Info](#authors-info)
 
 ## Description
-
-    This project is a web application for keeping book records. Users can search book records according to the title or the Author's name.
-
+This project is a web application for keeping book records. Users can search book records according to the title or the Author's name.
 ## Features
 
 As a user of the application,you will be able to :

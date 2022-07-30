@@ -1,6 +1,7 @@
-import emailjs, { sendForm } from "emailjs-com";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
+    
     function sendEmail ( e ) {
         e.preventDefault();
 
