@@ -7,6 +7,7 @@ const Contact = () => {
         emailjs.sendForm( 'service_hd6806v', 'template_b9y3pdx', e.target, 'Zl368Brpq3TROfItg' ).then( res => {
             console.log( res );
         } ).catch( err => console.log( err ) );
+        e.target.reset()
     }
 
     return (
